@@ -3,6 +3,7 @@ import openai
 from openai import OpenAI
 import replicate
 import json
+import cred
 
 
 # Training data pazeth aanu so oru net based source sett aknm pinna correct answer kittatha sahacharyam handle cheynm
@@ -80,8 +81,8 @@ def majority_boolean(bool_array):
 
 
 if __name__ == "__main__":
-    OpenAI.api_key = "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"
-    os.environ["REPLICATE_API_TOKEN"] = "r8_2DuF9v28Gy3ZkClaQBeES8WyOqovB8U3FNl11"
+    OpenAI.api_key = cred.openai_API_KEY
+    os.environ["REPLICATE_API_TOKEN"] = cred.replicate_api_token
     client = OpenAI(
     api_key=OpenAI.api_key 
     )

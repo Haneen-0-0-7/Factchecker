@@ -1,6 +1,7 @@
 import re
 import requests
 import pandas as pd
+import cred
 
 def clean_filename(filename):
     filename = re.sub(r'[\\/*?:"<>|]', "", filename)  # remove special characters
@@ -90,8 +91,8 @@ def main(query, result_total=10):
     print("\nResults are succesfully added to an excel sheet in the parent folder")
 
 if __name__ == "__main__":
-    API_KEY = "AIzaSyADxqvaeGdUWCUXs4wIu8719yD5t4uKmiI"
-    SEARCH_ENGINE_ID = "050926c7fa1664b0a"
+    API_KEY = cred.google_search_api_key
+    SEARCH_ENGINE_ID = cred.google_search_engine_id
 
     search_query=input("Enter the Search Query :")
     total_results=int(input("\nHow much pages from web is required :"))
